@@ -6,7 +6,7 @@
 
 Opt("WinTitleMatchMode", 2)
 
-Global $sOpmLogFilePath = "C:\Users\Administrator.ATLAS\AppData\Local\Temp\Outlook-Protokoll\OPMLog.log"
+Global $sOpmLogFilePath = @LocalAppDataDir & "\Temp\Outlook-Protokoll\OPMLog.log"
 Global $sPrfFilePath = @ScriptDir & "\profile.prf"
 
 ShowGUI()
