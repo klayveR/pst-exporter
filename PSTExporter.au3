@@ -91,14 +91,14 @@ Func ExportPST($sEmail, $sPassword, $sPopServer, $sSmtpServer, $sOutlookExePath,
     WinClose("Microsoft Outlook")
     ShellExecute($sOutlookExePath, '/importprf "' & $sPrfFilePath & '"')
 
-    BlockInput($BI_DISABLE)
-
     Local $hOutlook = WinWait("Microsoft Outlook (Protokollierung aktiviert)", "", 10)
     If $hOutlook = 0 Then
         MsgBox (16, "Fehler", "Microsoft Outlook konnte nicht geöffnet werden.")
         BlockInput($BI_ENABLE)
         Exit(1)
     EndIf
+
+    BlockInput($BI_DISABLE)
 
     Local $hPassword = WinWait("Netzwerk-Kennwort eingeben", "Geben Sie Ihren Benutzernamen und Ihr Kennwort ein.", 10)
     If Not $hPassword = 0 Then
